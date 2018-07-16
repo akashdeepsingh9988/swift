@@ -1,0 +1,129 @@
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+var friends  : [String];
+
+friends = ["Ishav", "param", "Abhi"]
+var cn = friends.count
+print(friends)
+//
+for frnd in friends
+{
+    for itr in 0..<cn
+    {
+    print("friend \(itr) :\(frnd)")
+    }
+}
+
+// printing with enum
+for (index , value) in friends.enumerated()
+{
+    print(index, value)
+}
+
+// printing with range
+for fr in friends[...1]
+{
+    print(fr)
+}
+
+// repeating values
+var numbers = Array(repeating: 1, count: 4)
+print(numbers)
+numbers [2] = 100
+print(numbers)
+
+//
+var more = Array(repeating: 1, count: 3)
+print(more)
+more [2] = 100
+print("more : " , more)
+
+var all = numbers + more
+print("all ", all)
+
+// printing merging
+
+for (index, value) in all.enumerated()
+{
+    print(index, value)
+}
+
+//
+var grocery = ["milk", "butter"]
+grocery += ["juice", "drink"]
+grocery[1...3] = ["lays", "grapes"]
+grocery.insert("🍆", at: 1)
+print(grocery)
+grocery.remove(at: 2)
+grocery.removeLast()
+grocery.removeAll()
+print(grocery)
+
+// new array
+var dynamic = [Any]()
+dynamic.insert(0,at: 0)
+dynamic.insert("HELLO",at: 1)
+dynamic.insert(2.0, at:2)
+
+print(dynamic)
+
+/***************************************************************************************************
+                        SETS
+ */
+
+var lang = Set<String>()
+lang.insert("JAVA")
+lang.insert("PHP")
+lang.insert("JSP")
+
+// without enum
+for lg in lang
+{
+    print(lg)
+}
+// with enum
+for (index,  value) in lang.enumerated()
+{
+    print(index, value)
+}
+
+// remove value
+
+lang.remove("PHP");
+print(lang)
+// sort values
+lang.sorted();
+lang.union(lang)
+
+print("intersecton : \(lang.intersection(mtang).sorted()) ")
+print("union : \(lang.union(mtang).sorted()) ")
+print("sub : \(lang.subtracting(mtang).sorted()) ")
+print("s difference : \(lang.symmetricDifference(mtang).sorted()) ")
+//lang.symmetricDifference(<#T##other: Sequence##Sequence#>)
+
+// dictionary
+
+var noi = [Int : String]()
+noi[20] = "Twenty"
+noi[10] = "Ten"
+print(noi)
+noi.reversed()
+print(noi)
+
+var Hec : [Int : String] = [400 : "bad request", 404 : "not found", 402 : "payment required", 406 : "not acceptable"]
+Hec [405] = "method not allowed"
+print("error codes : \(Hec)")
+Hec.updateValue("future use", forKey: 402)
+Hec.removeValue(forKey: 402)
+print("error codes after update : \(Hec)")
+
+var flight = [String: AnyObject]()
+flight["numbers"] = "Ac045" as AnyObject
+flight["duration "] = 14 as AnyObject
+flight["cost"] = 1455.45 as AnyObject
+print(flight)
+
+//***************************************************************************************************
+
